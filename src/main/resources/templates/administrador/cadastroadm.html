@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="styleAdm.css">
+<link rel="icon" href="icon.png">
+</head>
+<body>
+	<main class="container">
+		<div class="formulario">
+			<h1>Cadastre-se</h1>
+			<p>Por favor digite seus dados</p>
+			<br>
+
+			<form action="salvarAdmin" method="post">
+			<input type="hidden" name="id" th:value="${administrador?.id}"/>
+				<table>
+					<tr>
+						<td><label for="fname">Nome</label></td>
+						<td><label for="lname">Sobrenome</label></td>
+					</tr>
+
+					<tr>
+						<td><input type="text" name="nome" required th:value="${administrador?.nome}" ></td>
+						<td><input type="text" name="sobrenome" required></td>
+					</tr>
+
+				</table>
+				<label for="email">E-mail</label><br> <input type="email"
+					size="45" name="email" th:value="${administrador?.email}"><br> <label for="senha">Senha</label><br>
+				<input type="password" size="45" name="senha" required ><br>
+				<label for="genero">Genêro</label><br> <input type="radio"
+					name="genero" value="masc" required> <label for="">Masculino</label>
+				<input type="radio" name="genero" value="fem" required> <label
+					for="">Feminino</label><br>
+				<button type="submit">Cadastre-se</button>
+
+			</form>
+			
+			<div th:replace="fragments/mensagem"></div>
+			
+
+		</div>
+
+		<div class="img">
+			<h1>Bem Vindo</h1>
+			<p>
+				Cadastre-se e tenha acesso a todos ao <br> Ecossistema Suehtam
+			</p>
+		</div>
+</body>
+</html>

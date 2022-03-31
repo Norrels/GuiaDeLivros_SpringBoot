@@ -1,0 +1,73 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap')
+	;
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+}
+
+.formulario {
+	margin: auto;
+	font-family: 'Righteous', cursive;
+	width: 50%;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	height: 580px;
+	box-sizing: border-box;
+	padding: 100px 120px 100px 250px;
+}
+
+button {
+	width: 350px;
+	background-color: rgba(255, 255, 255, 0);
+	color: black;
+	border: solid 0.5px black;
+	border-radius: 55px;
+	margin-top: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.img {
+	color: white;
+	text-align: center;
+	padding-top: 360px;
+	font-family: 'Righteous', cursive;
+	box-sizing: border-box;
+	background-image: url('Frame\ 5.svg');
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 50%;
+	height: 960px;
+}
+
+.mgsucesso {
+	color: #BFD962;
+}
+
+.msgerro{
+	color: #8C0808;
+	
+}
+.tabela{
+
+	margin-bottom: 1000px;
+}
+
+  body {
+    display: flex;
+    min-height: 50vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
