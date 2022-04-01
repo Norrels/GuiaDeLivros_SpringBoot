@@ -42,15 +42,18 @@ public class TipoLivroController {
 		for(int i = 1; i <= totalPages; i++) {
 		numPaginas.add(i);
 		}
-		return "livro/listaTipo";
-	}
+	
+			model.addAttribute("numPaginas", numPaginas);
+			model.addAttribute("totalPags", totalPages);
+			model.addAttribute("pagAtual", page);
+			
+			return "livro/listaTipo";
+}
 	
 	@RequestMapping(value = "salvarTipo", method = RequestMethod.POST)
 	public String salvaTipo(@Valid TipoLivro tipo, BindingResult result, RedirectAttributes attr) {
 		if (result.hasErrors()) {
-			// Adicionar uma mensagens de erro
 			attr.addFlashAttribute("mensagemErro", "Verifique os campos...");
-			// redirecionar para o formulario
 			return "redirect:cadastrarTipo";
 			
 		}
@@ -58,11 +61,25 @@ public class TipoLivroController {
 			// salvar no bd a entidade
 			repository.save(tipo);
 			// adicionar uma mensagem
-			attr.addFlashAttribute("mensagemSucesso", "Administrador cadastrado com sucesso. ID:" + tipo.getId());
+			attr.addFlashAttribute("mensagemSucesso", "Tipo cadastrado com sucesso. ID:" + tipo.getId());
 		} catch (Exception e) {
 			attr.addFlashAttribute("mensagemErro", "Houve um erro ao cadastrar:" + e.getMessage());
 		}
 		return "redirect:cadastrarTipo";
 		
 	}
+	
+	@RequestMapping("excluirTipo")
+	public String excluirTipo(Long id) {
+		repository.deleteById(id);
+		return "redirect:listaTipo/1";
+	}
+	
+	@RequestMapping("alterarTipo")
+	public String alterarTipo(Long id, Model model) {
+		TipoLivro tipo = repository.findById(id).get();
+		model.addAttribute("tipo", tipo);
+		return "forward:cadastrarTipo";
+	}
+	
 }

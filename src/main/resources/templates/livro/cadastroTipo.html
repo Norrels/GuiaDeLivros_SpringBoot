@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -22,7 +22,7 @@
 			<br>
 
 			<form action="salvarTipo" method="post">
-				<input type="hidden" name="id" th:value="${administrador?.id}" />
+				<input type="hidden" name="id" th:value="${tipo?.id}" />
 				<table>
 					<tr>
 						<td><label for="fname">Nome</label></td>
@@ -30,17 +30,17 @@
 
 					<tr>
 						<td><input type="text" name="nome" required
-							th:value="${administrador?.nome}"></td>
+							th:value="${tipo?.nome}"></td>
 					</tr>
 
 				</table>
 				
 				<label for="email">Descriçâo</label><br>
-				<textarea id="descricao" name="descricao" rows="4" cols="50"></textarea>
+				<textarea id="descricao" name="descricao" rows="4" cols="50" th:text="${tipo?.descricao}"></textarea>
 				<br> 
 				<label for="senha">Palavras Chaves</label><br> 
 				
-				<input type="text" name="palavraChave" data-role="tagsinput" /><br>
+				<input type="text" name="palavraChave" data-role="tagsinput" th:value="${tipo?.palavraChave}" /><br>
 
 				<button type="submit">Cadastre-se</button>
 
