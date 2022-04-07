@@ -1,0 +1,196 @@
+@import
+	url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Righteous', cursive;
+	text-decoration: none;
+	list-style: none;
+}
+
+.nav {
+	width: 20%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* ALINHANDO A IMAGEM */
+	text-align: center;
+	/* PRECISA DE SPACE BETWEEN PARA DEIXAR O BOTÂO SAIR NO FINAL */
+	justify-content: space-between;
+	/* DEIXANDO A NAV NA LATERAL */
+	position: fixed;
+	background-color: #263238;
+	
+}
+
+.nav li {
+	color: rgb(190, 190, 190);
+	margin: 20px 0px;
+	padding: 0px 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	transition-duration: 0.5s;
+}
+
+.nav a {
+	width: 40%;
+	text-align: right;
+	color: rgb(190, 190, 190);
+}
+
+.profile {
+	width: 30%;
+	border-radius: 100px;
+	margin-top: 50px;
+}
+
+.container {
+	display: flex;
+	justify-content: right;
+}
+
+.container section {
+	width: 80%;
+	padding: 50px;
+	box-sizing: border-box;
+}
+
+.container div:first-child {
+	margin-bottom: 40px;
+}
+
+.busca-icon {
+	color: black;
+	border: solid 1px black;
+	padding: 20px;
+}
+
+.busca-input {
+	padding: 20px;
+	margin-left: 15px;
+	border: solid 1px black;
+	background-color: #Fff;
+}
+
+.welcome {
+	padding: 40px;
+	margin-bottom: 30px;
+	border-radius: 20px;
+	background: #d3d9d0;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.container h2 {
+	margin-bottom: 20px;
+}
+
+.adm-info {
+	margin-bottom: 20px;
+	padding: 20px;
+	border: 1px solid;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: #F3F3F3;
+	box-shadow: 0px 7px 4px rgba(0, 0, 0, 0.25);
+	transition-duration: 0.5s;
+}
+
+.adm-info div {
+	width: 57%;
+	margin-left: 90px;
+}
+
+.adm-info a {
+	text-decoration: none;
+	color: initial;
+	margin-right: 20px;
+	padding: 20px 40px;
+	border-radius: 20px;
+	border: 1px solid;
+	background: #d1d1d1;
+	transition-duration: 0.5s;
+}
+
+.rodape {
+	padding: 10px;
+	display: flex;
+	justify-content: right;
+	flex-direction: row;
+	color: white;
+	background-color: #263238;
+}
+
+.rodape div {
+	width: 80%;
+	text-align: center;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+/* HOVER */
+.nav li:hover, a:hover {
+	color: white;
+}
+
+.adm-info:hover {
+	background-color: #dbdbdbcc;
+}
+
+.adm-info a:hover {
+	color: #000;
+	background-color: #afafaf;
+}
+
+.pagination {
+	padding: 10px;
+	display: flex;
+	justify-content: right;
+	flex-direction: row;
+	color: white;
+}
+
+.pagination_section {
+	width: 80%;
+	text-align: center;
+	box-sizing: border-box;
+	text-align: center;
+}
+/* pagination styling */
+.pagination_section li {
+	color: black;
+	padding: 10px 18px;
+	text-decoration: none;
+	display: inline-block;
+}
+/* pagination hover effect on non-active */
+.pagination_section li:hover:not(.active) {
+	background-color: #031F3B;
+	color: white;
+}
+/* pagination hover effect on active*/
+a:nth-child(5) {
+	background-color: green;
+	color: white;
+}
+
+a:nth-child(1) {
+	font-weight: bold;
+}
+
+a:nth-child(7) {
+	font-weight: bold;
+}
+
+.content {
+	margin: 50px;
+	padding: 15px;
+	width: 700px;
+	height: 200px;
+	border: 2px solid black;
+}

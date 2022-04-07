@@ -114,6 +114,12 @@ public class AdministradorController {
 		return "forward:cadastroAdm";
 		
 	}
+
+	@RequestMapping("buscarPorNome")
+	public String buscarPorNome(String nome, Model model) {
+		 model.addAttribute("clientes", repository.findByNomeLike(nome));
+		return "lista";
+	}
 	
 }
 

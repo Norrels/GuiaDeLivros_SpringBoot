@@ -29,7 +29,7 @@ public class TipoLivroController {
 
 	@RequestMapping("cadastrarTipo")
 	public String cadastraTipo() {
-		return "livro/cadastroTipo";
+		return "tipo/cadastroTipo";
 	}
 	
 	@RequestMapping("listaTipo/{page}")
@@ -47,7 +47,7 @@ public class TipoLivroController {
 			model.addAttribute("totalPags", totalPages);
 			model.addAttribute("pagAtual", page);
 			
-			return "livro/listaTipo";
+			return "tipo/listaTipo";
 }
 	
 	@RequestMapping(value = "salvarTipo", method = RequestMethod.POST)

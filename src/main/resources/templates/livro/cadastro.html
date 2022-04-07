@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<td>Nome</td>
+			<td><Input type="text"></Input></td>
+		</tr>
+
+		<tr>
+			<td>Tipo</td>
+            <td><select name="tipos.id">
+            <option selected="selected" disabled="disabled">Selecione</option>
+					<option name="tipos" th:each="a: ${tipos}" th:text="${a.nome}" th:value=${a.id} ></option>
+				</select></td>
+		</tr>
+
+		<tr>
+			<td>Num. de Paginas</td>
+            <td ><Input type="text"></Input></td>
+		</tr>
+
+		<tr>
+			<td>Autor</td>
+			<td><select>
+			<option selected="selected" disabled="disabled">Selecione</option>
+               <option name="tipos" th:each="a: ${autores}" th:text="${a.nome}" th:value=${a.id} ></option>
+            </select></td>
+		</tr>
+        
+		<tr>
+			<td>Editora</td>
+            <td><select>
+            <option selected="selected" disabled="disabled">Selecione</option>
+                <option name="tipos" th:each="a: ${editoras}" th:text="${a.nome}" th:value=${a.id} ></option>
+            </select></td>
+		</tr>
+
+		<tr>
+			<td>Ano Lançamento</td>
+			<td><Input type="number"></Input></td>
+		</tr>
+
+		<tr>
+			<td>ISBN</td>
+            <td><Input type="text"></Input></td>
+		</tr>
+
+		<tr>
+			<td>Publico Alvo</td>
+			<td><select name="publicalvo">
+						<option selected="selected" disabled="disabled">Selecione</option>
+						<option name="publicoAlvo" th:each="a: ${publicos}" th:text="${a.toString()}"></option>
+					</select>
+				</td>
+		</tr>
+
+		<tr>
+			<td>Idiomas</td>
+			<td><Input type="text"></Input></td>
+		</tr>
+
+		<tr>
+			<td>Sinopse</td>
+            <td><Input type="text"></Input></td>
+		</tr>
+
+		<tr>
+			<td>Fotos</td>
+            <td><Input type="file"></Input></td>
+		</tr>	
+	</table>
+</body>
+</html>

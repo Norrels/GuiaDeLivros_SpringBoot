@@ -12,6 +12,8 @@ public interface AutorRepository extends PagingAndSortingRepository<Autor, Long>
 
 	public List<Autor> findByGeneroId(Long id);
 
+	public List<Autor> findAllByOrderByNomeAsc();
+
 
 	
 }
