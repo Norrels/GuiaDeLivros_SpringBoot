@@ -27,8 +27,8 @@ public class Livro {
 	private String publicoAlvo;
 	@ManyToOne
 	private TipoLivro tipo;
-	private String ISBN;
-	private String anaEdicao;
+	private String isbn;
+	private String anoEdicao;
 	@Column(columnDefinition = "TEXT")
 	private String fotos;
 	private String idioma;

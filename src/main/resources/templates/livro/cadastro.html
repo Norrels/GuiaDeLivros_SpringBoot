@@ -1,78 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+	<!-- PARA PASSAR MUITOS CONTEUDOS EM FORMULARIO USE O MITUPART/FORM-DATA -->   
+<form action="salvarRestaurante" method="post" enctype="multipart/form-data">
 	<table>
 		<tr>
 			<td>Nome</td>
-			<td><Input type="text"></Input></td>
+			<td><Input name="nome" type="text"></Input></td>
 		</tr>
 
 		<tr>
 			<td>Tipo</td>
-            <td><select name="tipos.id">
+            <td><select name="tipo.id">
             <option selected="selected" disabled="disabled">Selecione</option>
-					<option name="tipos" th:each="a: ${tipos}" th:text="${a.nome}" th:value=${a.id} ></option>
+					<option th:each="t: ${tipos}" th:text="${t.nome}" th:value=${t.id} ></option>
 				</select></td>
 		</tr>
 
 		<tr>
 			<td>Num. de Paginas</td>
-            <td ><Input type="text"></Input></td>
+            <td ><Input name="numPags" type="text"></Input></td>
 		</tr>
 
 		<tr>
 			<td>Autor</td>
-			<td><select>
+			<td><select name="autor.id">
 			<option selected="selected" disabled="disabled">Selecione</option>
-               <option name="tipos" th:each="a: ${autores}" th:text="${a.nome}" th:value=${a.id} ></option>
+               <option th:each="a: ${autores}" th:text="${a.nome}" th:value=${a.id} ></option>
             </select></td>
 		</tr>
         
 		<tr>
 			<td>Editora</td>
-            <td><select>
+            <td><select name="editora.id">
             <option selected="selected" disabled="disabled">Selecione</option>
-                <option name="tipos" th:each="a: ${editoras}" th:text="${a.nome}" th:value=${a.id} ></option>
+                <option th:each="e: ${editoras}" th:text="${e.nome}" th:value=${e.id} ></option>
             </select></td>
 		</tr>
 
 		<tr>
 			<td>Ano Lançamento</td>
-			<td><Input type="number"></Input></td>
+			<td><Input name="anoEdicao" type="number"></Input></td>
 		</tr>
 
 		<tr>
 			<td>ISBN</td>
-            <td><Input type="text"></Input></td>
+            <td><Input name="isbn" type="text"></Input></td>
 		</tr>
 
 		<tr>
 			<td>Publico Alvo</td>
-			<td><select name="publicalvo">
+			<td><select name="publicoAlvo">
 						<option selected="selected" disabled="disabled">Selecione</option>
-						<option name="publicoAlvo" th:each="a: ${publicos}" th:text="${a.toString()}"></option>
+						<option th:each="a: ${publicos}" th:text="${a.toString()}"></option>
 					</select>
 				</td>
 		</tr>
 
 		<tr>
 			<td>Idiomas</td>
-			<td><Input type="text"></Input></td>
+			<td><Input name="idioma" type="text"></Input></td>
 		</tr>
 
 		<tr>
 			<td>Sinopse</td>
-            <td><Input type="text"></Input></td>
+            <td><Input name="sinopse" type="text"></Input></td>
 		</tr>
 
 		<tr>
 			<td>Fotos</td>
-            <td><Input type="file"></Input></td>
+            <td><Input name="fileFotos" type="file" multiple accept="image/"></Input></td>
 		</tr>	
+		<tr>
+		<td><button type="submit">Cadastrar</button></td>
+		</tr>
+		
 	</table>
+	</form>
 </body>
 </html>
