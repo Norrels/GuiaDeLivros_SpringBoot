@@ -33,4 +33,9 @@ public class Livro {
 	private String fotos;
 	private String idioma;
 	
+	//retorna as fotos na forma de vetor de Strings
+	public String[] verFotos() {
+		return fotos.split(";");
+	}
+	
 }

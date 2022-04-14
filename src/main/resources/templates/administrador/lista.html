@@ -1,115 +1,153 @@
-
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Administradores</title>
+    <link rel="stylesheet" href="/style1.css">
+    <link rel="shortcut icon" type="imagex/png" href="icon.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <!-- ---------------     NAVBAR      ---------------------- -->
-    <ul class="nav">
-        <div>
-            <li>
-                <img class="profile" src="/img1.png" alt="Logo">
-            </li>
-
-            <li>
-                <i class="fa fa-home fa-2x" aria-hidden="true"></i>
-                <a href="">Inicio</a>
-            </li>
-
-            <li>
-                <i class="fa fa-user-plus fa-2x" aria-hidden="true"></i>
-                <a href="../cadastroAdm">Cadastre</a>
-            </li>
-
-            <li>
-                <i class="fa fa-book fa-2x" aria-hidden="true"></i>
-                <a href="">Livros</a>
-            </li>
-
-            <li>
-                <i class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
-                <a href="../listaEditora/1">Editoras</a>
-                
-            </li>
-
-            <li>
-                <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
-                <a href="../listaAutor/1">Autores</a>
-            </li>
+    <div class="sidebar close">
+        <div class="logo-details">
+           <i class='bx bx-bookmarks'></i>
+            <span class="logo_name">Rebooks</span>
         </div>
-        <!-- ---------------     BOTÂO DE SAIR       --------------- -->
-        <li class="nav-item">
-            <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">Inicio</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Inicio</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-book-bookmark'></i>
+                        <span class="link_name">Livro</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Livro</a></li>
+                    <li><a href="#">Listar</a></li>
+                    <li><a href="#">Cadastrar</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-user'></i>
+                        <span class="link_name">Autores</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Autores</a></li>
+                    <li><a href="#">Listar</a></li>
+                    <li><a href="#">Cadastrar</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-edit'></i>
+                        <span class="link_name">Editoras</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Editoras</a></li>
+                    <li><a href="#">Listar</a></li>
+                    <li><a href="#">Cadastrar</a></li>
+                </ul>
+            </li>
 
-        </li>
-    </ul>
+            <li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bxs-user-badge'></i>
+                        <span class="link_name">Admins</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Editoras</a></li>
+                    <li><a href="#">Listar</a></li>
+                    <li><a href="#">Cadastrar</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
-    <!-- ---------------     CONTAINER PRINCIPAL     --------------- -->
-    <!-- essa clase alinha o conteudo a direta -->
-    <main class="container">
-
-        <section>
-
+    <section class="home-section">
+        <div class="home-content">
             <div>
-          
-			<a href="../buscarPorNome"> <i class="fa fa-search  busca-icon" aria-hidden="true"></i></a>
-               
-                <input type="text" class="busca-input" size="90" placeholder="Buscar">
-
-                <select class="busca-input">
-                    <option>Nome</option>
-                    <option>Palavra Chave</option>
-                </select>
+                <i class='bx bx-menu'></i>
             </div>
+            <div class="conteudo close">
+                <div class="search-section">
+                    <i class='bx bx-search search-icon'></i>
+                    <input type="text" class="busca-input close" placeholder="Buscar">
 
-            <div class="welcome">
-                <h3>Boa tarde Joe,</h3>
-                <p>Estamos felizes em te ve de volta,<br>
-                    Cadastre, altere e edite os administradores</p>
-            </div>
+                    <select>
+                        <option>Nome</option>
+                        <option>Palavra Chave</option>
+                    </select>
 
-            <h2>Administradores</h2>
-         
-           
-	
-            <div class="adm-info" th:each="adm:${admins}">
-                <p th:text="${adm.id}"></p>
-
-                <div>
-                    <p th:text="${adm.nome}"><b></b></p>
-                    <p th:text="${adm.email}"></p>
+                    <a class="button-cad">Cadastre</a>
                 </div>
 
-                <a th:href="@{/alterarAdm(id=${adm.id})}"> Alterar </a>
-                <a th:href="@{/excluirAdm(id=${adm.id})}">Excluir</a>
+                <div class="welcome">
+                    <h3>Boa tarde Joe,</h3>
+                    <p>Estamos felizes em te ve de volta,<br>
+                        Cadastre, altere e edite os administradores</p>
+                </div>
+                <div class="title-adm">  <h2>Administradores</h2></div>
+              
+                <div class="adm-info" th:each="adm:${admins}">
+                    <p th:text="${adm.id}"></p>
+    
+                    <div>
+                        <p th:text="${adm.nome}"><b></b></p>
+                        <p th:text="${adm.email}"></p>
+                    </div>
+    
+                    <button class="button-adm"> <a th:href="@{/alterarAdm(id=${adm.id})}"> Alterar </a></button>
+                    <button class="button-adm"> <a th:href="@{/excluirAdm(id=${adm.id})}">Excluir</a></button>
+                </div>
+
+
+                <div class="pagination">
+                    <ul class="pagination_section">
+                           <li th:class="${pagAtual == 1 ? 'disabled' : 'waves-effect'}"><a
+                               th:href="${pagAtual > 1 ? pagAtual -1 : '#'}"><< Previous
+                                   </a></li>
+                   
+                           <li th:class="${pagAtual == p ? 'active blue' : 'waves-effect'}"
+                               th:each="p:${numPaginas}"><a th:href="${p}"><span
+                                   th:text="${p}"></span></a></li>
+                   
+                           <li th:class="${pagAtual == totalPags ? 'disabled' : 'waves-effect'}"><a
+                               th:href="${pagAtual < totalPags ? pagAtual + 1 : '#'}"> Next >></a></li>
+                       </ul>
+                   </div>
+                
             </div>
-        </section>
+
+           
+        </div>
+    </section>
+    </div>
   
-    </main>
 
-<div class="pagination">
- <ul class="pagination_section">
-		<li th:class="${pagAtual == 1 ? 'disabled' : 'waves-effect'}"><a
-			th:href="${pagAtual > 1 ? pagAtual -1 : '#'}"><< Previous
-				</a></li>
-
-		<li th:class="${pagAtual == p ? 'active blue' : 'waves-effect'}"
-			th:each="p:${numPaginas}"><a th:href="${p}"><span
-				th:text="${p}"></span></a></li>
-
-		<li th:class="${pagAtual == totalPags ? 'disabled' : 'waves-effect'}"><a
-			th:href="${pagAtual < totalPags ? pagAtual + 1 : '#'}"> Next >></a></li>
-	</ul>
-</div>
-  
+    <script src="/script.js"></script>
 
 </body>
 

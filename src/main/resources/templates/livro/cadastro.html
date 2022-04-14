@@ -7,30 +7,33 @@
 <body>
 	<!-- PARA PASSAR MUITOS CONTEUDOS EM FORMULARIO USE O MITUPART/FORM-DATA -->   
 <form action="salvarRestaurante" method="post" enctype="multipart/form-data">
+<input type="hidden" name="id" th:value="${livro?.id}"/>
+
+	
 	<table>
 		<tr>
 			<td>Nome</td>
-			<td><Input name="nome" type="text"></Input></td>
+			<td><Input name="nome" type="text" th:value="${livro?.nome}"></Input></td>
 		</tr>
 
 		<tr>
 			<td>Tipo</td>
             <td><select name="tipo.id">
             <option selected="selected" disabled="disabled">Selecione</option>
-					<option th:each="t: ${tipos}" th:text="${t.nome}" th:value=${t.id} ></option>
+					<option th:each="t: ${tipos}" th:text="${t.nome}" th:value=${t.id} th:selected="${t.id == livro?.tipo?.id}"></option>
 				</select></td>
 		</tr>
 
 		<tr>
 			<td>Num. de Paginas</td>
-            <td ><Input name="numPags" type="text"></Input></td>
+            <td ><Input name="numPags" type="text" th:value="${livro?.numPags}"></Input></td>
 		</tr>
 
 		<tr>
 			<td>Autor</td>
 			<td><select name="autor.id">
 			<option selected="selected" disabled="disabled">Selecione</option>
-               <option th:each="a: ${autores}" th:text="${a.nome}" th:value=${a.id} ></option>
+               <option th:each="a: ${autores}" th:text="${a.nome}" th:value=${a.id} th:selected="${a.id == livro?.autor?.id}" ></option>
             </select></td>
 		</tr>
         
@@ -38,48 +41,70 @@
 			<td>Editora</td>
             <td><select name="editora.id">
             <option selected="selected" disabled="disabled">Selecione</option>
-                <option th:each="e: ${editoras}" th:text="${e.nome}" th:value=${e.id} ></option>
+                <option th:each="e: ${editoras}" th:text="${e.nome}" th:value=${e.id} th:selected="${e.id == livro?.editora?.id}" ></option>
             </select></td>
 		</tr>
 
 		<tr>
 			<td>Ano Lançamento</td>
-			<td><Input name="anoEdicao" type="number"></Input></td>
+			<td><Input name="anoEdicao" type="number" th:value="${livro?.anoEdicao}"></Input></td>
 		</tr>
 
 		<tr>
 			<td>ISBN</td>
-            <td><Input name="isbn" type="text"></Input></td>
+            <td><Input name="isbn" type="text" th:value="${livro?.isbn}"></Input></td>
 		</tr>
 
 		<tr>
 			<td>Publico Alvo</td>
 			<td><select name="publicoAlvo">
 						<option selected="selected" disabled="disabled">Selecione</option>
-						<option th:each="a: ${publicos}" th:text="${a.toString()}"></option>
+						<option th:each="a: ${publicos}" th:text="${a.toString()}" th:value=${a.toString()} th:selected="${a.toString() == livro?.publicoAlvo}"></option>
 					</select>
 				</td>
 		</tr>
 
 		<tr>
 			<td>Idiomas</td>
-			<td><Input name="idioma" type="text"></Input></td>
+			<td><Input name="idioma" type="text" th:value="${livro?.idioma}"></Input></td>
 		</tr>
 
 		<tr>
 			<td>Sinopse</td>
-            <td><Input name="sinopse" type="text"></Input></td>
+            <td><Input name="sinopse" type="text" th:value="${livro?.sinopse}"></Input></td>
 		</tr>
 
 		<tr>
 			<td>Fotos</td>
-            <td><Input name="fileFotos" type="file" multiple accept="image/"></Input></td>
+            <td><Input name="fileFotos" type="file" multiple accept="image/" ></Input></td>
 		</tr>	
+		
+	
 		<tr>
+		<td></td>
+		</tr>
+		
+			
+		<tr>
+		
+		
 		<td><button type="submit">Cadastrar</button></td>
 		</tr>
 		
 	</table>
+	
+		<div th:if="${livro?.fotos?.length > 0}">
+			<h2>Tem fotos Cadastradas</h2>
+
+				<div>
+					<ul>
+						<li th:each="foto : ${livro?.verFotos()}">
+						<a th:href="${foto}" target="_blank"><img th:src="${foto}"></a>
+						</li>
+					</ul>
+				</div>
+		</div>
+	
 	</form>
 </body>
 </html>
