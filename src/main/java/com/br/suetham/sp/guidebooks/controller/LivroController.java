@@ -54,7 +54,7 @@ public class LivroController {
 	@RequestMapping("salvarRestaurante")
 	public String salvar(Livro livro , @RequestParam("fileFotos") MultipartFile[] fileFotos) {
 		//String para armazenar as URLS
-		String fotos = "";
+		String fotos = livro.getFotos();
 		for(MultipartFile arquivo : fileFotos) {
 			//verifica se o arquivo existe
 			if(arquivo.getOriginalFilename().isEmpty()) {
@@ -96,7 +96,13 @@ public class LivroController {
 
 	@RequestMapping("excluirLivro")
 	public String ExcluirAutor(Long id) {
-		repositoryLivro.deleteById(id);
+		Livro livro = repositoryLivro.findById(id).get();
+		if(livro.getFotos().length() > 0) {
+			for(String foto : livro.verFotos()) {
+				fireutil.deletar(foto);
+			}
+		}
+		repositoryLivro.delete(livro);
 		return "redirect:listaLivro/1";
 	}
 
@@ -106,7 +112,7 @@ public class LivroController {
 		model.addAttribute("livro", livro);
 		return "forward:/cadastraLivro";
 	}
-	
+	@RequestMapping("excluirFotos")
 	public String excluirFotos(Long idLivro, int numFoto, Model model) {
 		//buscar o livro
 		Livro livro = repositoryLivro.findById(idLivro).get();

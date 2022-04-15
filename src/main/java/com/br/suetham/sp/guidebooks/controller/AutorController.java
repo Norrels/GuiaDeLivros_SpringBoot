@@ -70,7 +70,7 @@ public class AutorController {
 		model.addAttribute("totalPags", totalPages);
 		model.addAttribute("pagAtual", page);
 		
-		return "autor/listaAutor";
+		return "autor/lista";
 }
 
 	@RequestMapping("excluirAutor")

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.naming.Binding;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -119,6 +120,20 @@ public class AdministradorController {
 	public String buscarPorNome(String nome, Model model) {
 		 model.addAttribute("clientes", repository.findByNomeLike(nome));
 		return "lista";
+	}
+	@RequestMapping("login")
+	public String login(Administrador admLogin, RedirectAttributes attr, HttpSession session) {
+		//buscar o administrador no banco
+		Administrador admin = repository.findbyEmailAndSenha(admLogin.getEmail(), admLogin.getSenha());
+		//verifica se existe
+		if(admin == null) {
+			attr.addFlashAttribute("mensagemErro", "Login e/ou senha inválido(s)");
+			return "redirect:/";
+		}else {
+			//salvar o adminsitrador na sessão
+			session.setAttribute("usuarioLogado", admin);
+			return "redirect:/listaLivro/1";
+		}
 	}
 	
 }

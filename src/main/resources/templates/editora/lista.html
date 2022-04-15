@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Editoras</title>
+<link rel="stylesheet" href="/style1.css">
+<link rel="shortcut icon" type="imagex/png" href="/icon.png">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
+	rel='stylesheet'>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="sidebar close">
+		<div class="logo-details">
+			<i class='bx bx-bookmarks'></i> <span class="logo_name">Rebooks</span>
+		</div>
+		<ul class="nav-links">
+			<li><a href="#"> <i class='bx bx-grid-alt'></i> <span
+					class="link_name">Inicio</span>
+			</a>
+				<ul class="sub-menu blank">
+					<li><a class="link_name" href="#">Inicio</a></li>
+				</ul></li>
+			<li>
+				<div class="iocn-link">
+					<a href="#"> <i class='bx bx-book-bookmark'></i> <span
+						class="link_name">Livro</span>
+					</a> <i class='bx bxs-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Livro</a></li>
+					<li><a href="#">Listar</a></li>
+					<li><a href="#">Cadastrar</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="iocn-link">
+					<a href="#"> <i class='bx bx-user'></i> <span class="link_name">Autores</span>
+					</a> <i class='bx bxs-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Autores</a></li>
+					<li><a href="#">Listar</a></li>
+					<li><a href="#">Cadastrar</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="iocn-link">
+					<a href="#"> <i class='bx bx-edit'></i> <span class="link_name">Editoras</span>
+					</a> <i class='bx bxs-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Editoras</a></li>
+					<li><a href="#">Listar</a></li>
+					<li><a href="#">Cadastrar</a></li>
+				</ul>
+			</li>
+
+			<li>
+			<li>
+				<div class="iocn-link">
+					<a href="#"> <i class='bx bxs-user-badge'></i> <span
+						class="link_name">Admins</span>
+					</a> <i class='bx bxs-chevron-down arrow'></i>
+				</div>
+				<ul class="sub-menu">
+					<li><a class="link_name" href="#">Editoras</a></li>
+					<li><a href="#">Listar</a></li>
+					<li><a href="#">Cadastrar</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<section class="home-section">
+		<div class="home-content">
+			<div>
+				<i class='bx bx-menu'></i>
+			</div>
+			<div class="conteudo close">
+				<div class="search-section">
+					<i class='bx bx-search search-icon'></i> <input type="text"
+						class="busca-input close" placeholder="Buscar"> <select>
+						<option>Nome</option>
+						<option>Palavra Chave</option>
+					</select> <a class="button-cad editora">Cadastre</a>
+				</div>
+
+				<div class="welcome editora">
+					<h3>Boa tarde Joe,</h3>
+					<p>
+						Estamos felizes em te ve de volta,<br> Cadastre, altere e
+						edite os administradores
+					</p>
+				</div>
+				<div class="title-adm">
+					<h2>Administradores</h2>
+				</div>
+
+				<div class="adm-info" th:each="edt:${editoras}">
+					<p th:text="${edt.id}"></p>
+
+					<div>
+						<p th:text="${edt.nome}">
+							<b></b>
+						</p>
+						<p th:text="${edt.sobre}"></p>
+
+					</div>
+
+					<button class="button-adm editora">Alterar</button>
+					<button class="button-adm editora">Excluir</button>
+				</div>
+
+
+				<div class="pagination">
+					<ul class="pagination_section">
+						<li th:class="${pagAtual == 1 ? 'disabled' : 'waves-effect'}"><a
+							th:href="${pagAtual > 1 ? pagAtual -1 : '#'}"><< Previous </a></li>
+
+						<li th:class="${pagAtual == p ? 'active blue' : 'waves-effect'}"
+							th:each="p:${numPaginas}"><a th:href="${p}"><span
+								th:text="${p}"></span></a></li>
+
+						<li
+							th:class="${pagAtual == totalPags ? 'disabled' : 'waves-effect'}"><a
+							th:href="${pagAtual < totalPags ? pagAtual + 1 : '#'}"> Next
+								>></a></li>
+					</ul>
+				</div>
+
+			</div>
+
+
+		</div>
+	</section>
+
+	<script src="/script.js"></script>
+</body>
+
+</html>

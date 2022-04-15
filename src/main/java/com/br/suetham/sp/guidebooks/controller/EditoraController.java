@@ -66,7 +66,7 @@ public class EditoraController {
 			model.addAttribute("totalPags", totalPages);
 			model.addAttribute("pagAtual", page);
 			
-			return "editora/listaEditora";
+			return "editora/lista";
 }
 	}
 

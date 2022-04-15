@@ -8,6 +8,7 @@
 	<!-- PARA PASSAR MUITOS CONTEUDOS EM FORMULARIO USE O MITUPART/FORM-DATA -->   
 <form action="salvarRestaurante" method="post" enctype="multipart/form-data">
 <input type="hidden" name="id" th:value="${livro?.id}"/>
+<input type="hidden" th:value="${livro?.fotos}" name="fotos">
 
 	
 	<table>
@@ -98,8 +99,9 @@
 
 				<div>
 					<ul>
-						<li th:each="foto : ${livro?.verFotos()}">
+						<li th:each="foto, i : ${livro?.verFotos()}">
 						<a th:href="${foto}" target="_blank"><img th:src="${foto}"></a>
+						<a th:href="@{/excluirFotos(idLivro=${livro?.id},numFoto=${i.index})}">Excluir</a>
 						</li>
 					</ul>
 				</div>

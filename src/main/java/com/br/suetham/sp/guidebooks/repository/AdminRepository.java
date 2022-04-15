@@ -13,5 +13,7 @@ public interface AdminRepository extends PagingAndSortingRepository<Administrado
 
 	public List<Administrador> findByNomeLike(String nome);
 	
+	public Administrador findByEmailAndSenha(String email, String senha);
+	
 
 }

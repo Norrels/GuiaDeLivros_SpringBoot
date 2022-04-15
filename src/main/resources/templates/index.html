@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="styleAdm.css">
 
+<link rel="stylesheet" href="/materialize/css/materialize.css">
 <link rel="icon" href="icon.png">
 </head>
 </head>
 <body>
+<header th:replace="fragments/padrao::navbar"></header>
 	<main class="container">
 		<div class="formulario">
 			<h1>Cadastre-se</h1>
@@ -25,19 +26,17 @@
 					<tr>
 						<td><input type="text" name="nome" required th:value="${autor?.nome}" ></td>
 					</tr>
+					<tr>
+						<td><label for="fname">Senha</label></td>
+					</tr>
+
+					<tr>
+						<td><input type="text" name="nome" required th:value="${autor?.nome}" ></td>
+					</tr>
+					
 
 				</table>
-				<br>
-				<label for="email">Biografia</label><br> 
-				<textarea id="descricao" name="biografia" rows="4" cols="50" th:text="${autor?.biografia}"></textarea>
-				<br> 
-				<br>
-				<label for="email">Gênero</label><br> 
 				
-				<select name="genero.id">
-					<option name="genero" th:each="a: ${autores}" th:text="${a.nome}" th:value=${a.id} ></option>
-				</select>
-				<br>
 				
 				<button type="submit">Cadastre-se</button>
 
@@ -48,12 +47,7 @@
 
 		</div>
 
-		<div class="img">
-			<h1>Bem Vindo</h1>
-			<p>
-				Cadastre-se e tenha acesso a todos ao <br> Ecossistema Suehtam
-			</p>
-		</div>
+		
 		</main>
 </body>
 </html>
