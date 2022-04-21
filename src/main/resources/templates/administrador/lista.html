@@ -36,7 +36,7 @@
                 <ul class="sub-menu">
                     <li><a class="link_name" href="#">Livro</a></li>
                     <li><a href="#">Listar</a></li>
-                    <li><a href="#">Cadastrar</a></li>
+                    <li><a href="/cadastraLivro">Cadastrar</a></li>
                 </ul>
             </li>
             <li>
@@ -105,7 +105,7 @@
                 </div>
 
                 <div class="welcome">
-                    <h3>Boa tarde Joe,</h3>
+                    <h3>Boa tarde <span th:text="${session.usuarioLogado.nome}"></span> </h3>
                     <p>Estamos felizes em te ve de volta,<br>
                         Cadastre, altere e edite os administradores</p>
                 </div>

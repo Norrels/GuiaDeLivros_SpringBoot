@@ -12,26 +12,27 @@
 <header th:replace="fragments/padrao::navbar"></header>
 	<main class="container">
 		<div class="formulario">
-			<h1>Cadastre-se</h1>
+			<h1>Login</h1>
 			<p>Por favor digite seus dados</p>
 			<br>
 
-			<form action="salvarAutor" method="post">
+			<form action="login" method="post">
 			<input type="hidden" name="id" th:value="${autor?.id}"/>
 				<table>
 					<tr>
-						<td><label for="fname">Nome</label></td>
+						<td><label for="fname">Email</label></td>
 					</tr>
 
 					<tr>
-						<td><input type="text" name="nome" required th:value="${autor?.nome}" ></td>
+						<td><input type="email" name="email" placeholder="Digite seu E-mail" ></td>
 					</tr>
 					<tr>
 						<td><label for="fname">Senha</label></td>
 					</tr>
 
 					<tr>
-						<td><input type="text" name="nome" required th:value="${autor?.nome}" ></td>
+						<td> <input
+						type="password"  name="senha" placeholder="Digite sua senha" required ></td>
 					</tr>
 					
 

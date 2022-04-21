@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.br.suetham.sp.guidebooks.annotation.Publico;
 import com.br.suetham.sp.guidebooks.model.Administrador;
 import com.br.suetham.sp.guidebooks.repository.AdminRepository;
 import com.br.suetham.sp.guidebooks.util.HashUtil;
@@ -108,6 +109,7 @@ public class AdministradorController {
 		return "redirect:listaAdm/1";
 		
 	}
+	
 	@RequestMapping("alterarAdm")
 	public String alterarAdm(Long id, Model model) {
 		Administrador admi = repository.findById(id).get();
@@ -121,10 +123,12 @@ public class AdministradorController {
 		 model.addAttribute("clientes", repository.findByNomeLike(nome));
 		return "lista";
 	}
+	
+	@Publico
 	@RequestMapping("login")
 	public String login(Administrador admLogin, RedirectAttributes attr, HttpSession session) {
 		//buscar o administrador no banco
-		Administrador admin = repository.findbyEmailAndSenha(admLogin.getEmail(), admLogin.getSenha());
+		Administrador admin = repository.findByEmailAndSenha(admLogin.getEmail(), admLogin.getSenha());
 		//verifica se existe
 		if(admin == null) {
 			attr.addFlashAttribute("mensagemErro", "Login e/ou senha inválido(s)");
@@ -134,6 +138,14 @@ public class AdministradorController {
 			session.setAttribute("usuarioLogado", admin);
 			return "redirect:/listaLivro/1";
 		}
+	}
+	
+	@RequestMapping("logout")
+	public String logout(HttpSession session) {
+		//invalida a sessão
+		session.invalidate();
+		//voltar para a pagina de login
+		return "redirect:/";
 	}
 	
 }
