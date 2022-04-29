@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.br.suetham.sp.guidebooks.annotation.Publico;
 import com.br.suetham.sp.guidebooks.model.Livro;
 import com.br.suetham.sp.guidebooks.model.TipoLivro;
 import com.br.suetham.sp.guidebooks.repository.LivroRepository;
@@ -21,11 +22,13 @@ public class LivroRestController {
 	@Autowired
 	private LivroRepository repository;
 	
+	@Publico
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	public Iterable<Livro> getLivros(){
 		return repository.findAll();
 	}
 	
+	@Publico
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
 	public ResponseEntity<Livro> getLivro(@PathVariable("id") Long idLivro){
 		//tenta buscar o restaurente no repository
@@ -37,6 +40,7 @@ public class LivroRestController {
 			return ResponseEntity.notFound().build();
 		}
 	}
+	@Publico
 	@RequestMapping(value = "/tipo/{id}", method = RequestMethod.GET)
 	public Iterable<Livro> getTipo(@PathVariable("id")Long id){
 		return repository.findByTipoId(id);

@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Righteous', cursive;
+}
+body.adm{
+    background-image: url(bg-adm.jpg);
+    background-size: cover;
+}
+body.editora{
+    background-image: url(bg-editora.jpg);
+    background-size: cover;
+}
+body.autor{
+    background-image: url(bg-autor.jpg);
+    background-size: cover;
+}
+body.tipo{
+    background-image: url(bg-tipo.jpg);
+    background-size: cover;
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}
+.div{
+    text-align: center;
+    border: solid 3px black;
+    background: linear-gradient(180deg, #e6e6e6 0%, #E9E9E9 100%);
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    margin-top: 200px;
+    padding: 50px 10px;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.25);
+}
+.formulario{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.input{
+    background-color: #ffffff;
+    border: none;
+    padding: 15px;
+    width: 60%;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+.input:focus{
+    outline: 0;
+    box-shadow: 5px 5px 4px rgba(102, 102, 102, 0.25);
+}
+.input-tag{
+    padding: 20px;
+}
+select{
+    color: #747474;
+}
+textarea{
+    resize: none;
+    font-size: 14px;
+}
+button{
+    margin-top: 20px;
+    height: 50px;
+    width: 60%;
+    border: none;
+    background-color:  #cfc2d3;
+    transition-duration: 0.5s;
+}
+button:hover{
+    background-color:  #c8a6d3;
+    box-shadow: 5px 5px 4px rgba(114, 114, 114, 0.25);
+}
+.span.editora{
+    color: #8ba13a;
+}
+.span.adm{
+    color: #4e1c5e;
+}
+.span.autor{
+    color: #df7286;
+}
+.button.editora{
+    background-color: #cbe4a7;
+}
+.button.editora:hover{
+    background-color: #8ba13a;
+}
+.button.autor{
+    background-color: #eca4b2;
+}
+.button.autor:hover{
+    background-color: #df7286;
+}

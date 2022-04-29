@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro administradores</title>
+    <link rel="stylesheet" href="/styleNavbar.css">
+    <link rel="stylesheet" href="/styleCadastro.css">
+    <link rel="shortcut icon" type="/imagex/png" href="icon.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="body adm">
+
+	<nav th:replace="fragments/navbar::nbar"></nav>
+
+    <section class="home-section">
+        <div class="home-content">
+            <div>
+                <i class='bx bx-menu'></i>
+            </div>
+            <div class="conteudo close">
+                <div class="div">
+                    <h2>Cadastro <span class="span adm">Administradores</span></h2>
+                   
+                    <h5>Cadastre um novo administrador rapido e fácil</h5>
+                       <form action="salvarAdmin" method="post">
+                       <input type="hidden" name="id" th:value="${administrador?.id}"/>
+                            <input class="input" type="text" name="nome" placeholder="Nome" required th:value="${administrador?.nome}" >
+                            <input class="input" type="email" name="email" placeholder="E-mail" th:value="${administrador?.email}">
+                            <input class="input" type="password" name="senha" placeholder="Senha" required>
+                            <input class="input" type="password" placeholder="Repita a senha">    
+                            <button  class="button adm" type="submit">Cadastre-se</button>
+                        </form>
+                </div>
+                
+            </div>   
+        </div>
+    </section>
+    
+      <script src="/script.js"></script>
+</body>
+
+</html>

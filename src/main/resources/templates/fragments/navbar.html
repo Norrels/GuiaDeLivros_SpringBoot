@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="sidebar close" th:fragment="nbar">
+        <div class="logo-details">
+           <i class='bx bx-bookmarks'></i>
+            <span class="logo_name">Rebooks</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="link_name">Inicio</span>
+                </a>
+                <ul class="sub-menu blank">
+                    <li><a class="link_name" href="#">Inicio</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-book-bookmark'></i>
+                        <span class="link_name">Livro</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Livro</a></li>
+                    <li><a href="/listaLivro/1">Listar</a></li>
+                    <li><a href="/cadastraLivro">Cadastrar</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-user'></i>
+                        <span class="link_name">Autores</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Autores</a></li>
+                    <li><a href="#">Listar</a></li>
+                    <li><a href="#">Cadastrar</a></li>
+                </ul>
+            </li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bx-edit'></i>
+                        <span class="link_name">Editoras</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Editoras</a></li>
+                    <li><a href="#">Listar</a></li>
+                    <li><a href="#">Cadastrar</a></li>
+                </ul>
+            </li>
+
+            <li>
+            <li>
+                <div class="iocn-link">
+                    <a href="#">
+                        <i class='bx bxs-user-badge'></i>
+                        <span class="link_name">Admins</span>
+                    </a>
+                    <i class='bx bxs-chevron-down arrow'></i>
+                </div>
+                <ul class="sub-menu">
+                    <li><a class="link_name" href="#">Editoras</a></li>
+                    <li><a href="#">Listar</a></li>
+                    <li><a href="#">Cadastrar</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

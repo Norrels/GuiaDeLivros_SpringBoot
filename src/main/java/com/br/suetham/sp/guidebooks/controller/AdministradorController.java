@@ -36,7 +36,7 @@ public class AdministradorController {
 
 	@RequestMapping("cadastroAdm")
 	public String formAdministrador() {
-		return "administrador/cadastroadm";
+		return "administrador/cadastro";
 	}
 
 	// request mapping para salvar o administrador, do tipo POST

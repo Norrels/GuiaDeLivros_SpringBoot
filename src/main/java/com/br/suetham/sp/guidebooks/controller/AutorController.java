@@ -34,7 +34,7 @@ public class AutorController {
 	public String cadastraTipo(Model model) {
 		model.addAttribute("autores", repositoryTipo.findAll());
 		
-		return "autor/cadastroAutor";
+		return "autor/cadastro";
 	}
 	
 	@RequestMapping("salvarAutor")
@@ -50,7 +50,7 @@ public class AutorController {
 		} catch (Exception e) {
 			attr.addFlashAttribute("mensagemErro", "Houve um erro ao cadastrar:" + e.getMessage());
 		}
-		return "redirect:cadastrarTipo";
+		return "redirect:cadastrarAutor";
 		
 	}
 

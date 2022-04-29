@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro editoras</title>
+    <link rel="stylesheet" href="/styleNavbar.css">
+    <link rel="stylesheet" href="/styleCadastro.css">
+    <link rel="shortcut icon" type="imagex/png" href="icon.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body class="body autor">
+
+   <nav th:replace="fragments/navbar::nbar"></nav>
+
+    <section class="home-section">
+        <div class="home-content">
+            <div>
+                <i class='bx bx-menu'></i>
+            </div>
+            <div class="conteudo close">
+                <div class="div">
+                    <h2>Cadastro <span class="span autor">Autores</span></h2>
+                   
+                    <h5>Cadastre um novo autor rapido e fácil</h5>
+                        <form action="/salvarAutor" method="post">
+							<input type="hidden" name="id" th:value="${autor?.id}"/>
+                            <input class="input" type="text" name="nome" placeholder="Nome" th:value="${autor?.nome}">
+                            <textarea class="input" name="biografia" rows="4" cols="50" placeholder="Biografia do autor" th:text="${autor?.biografia}"></textarea>   
+                            <select class="input" name="genero.id">
+                                <option>Selecione</option>
+                                <option name="genero" th:each="a: ${autores}" th:text="${a.nome}" th:value=${a.id} th:selected="${a.id == autor?.genero?.id}"  ></option>
+                            </select>
+                            <button class="button autor" type="submit">Cadastre-se</button>
+                        </form>
+                </div>
+                
+            </div>   
+        </div>
+    </section>
+   
+     <script src="/script.js"></script>
+</body>
+
+</html>
