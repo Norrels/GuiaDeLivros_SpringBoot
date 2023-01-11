@@ -15,3 +15,4 @@ A aplicação foi realizada com intuito de se aprofundar nos conceitos do Spring
 - Server side rendering
 - Conexão com banco de dados
 - Gerenciandor de dependências (Maven)
+- Integração com o Firabase Storage
